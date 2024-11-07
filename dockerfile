@@ -16,6 +16,9 @@ EXPOSE 80
 COPY . /var/www/html/
 COPY ./wp-config-sample.php /var/www/html/wp-config.php
 
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html
+
 # Define environment variables for WordPress
 # ENV WORDPRESS_DB_HOST=db
 # ENV WORDPRESS_DB_USER=exampleuser
